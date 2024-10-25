@@ -14,7 +14,7 @@ void TuringMachine::Solver(char& q, string& tape, vector<char*> guide, int carri
     }
 }
 
-void TuringMachine::MT(char q, string tape, vector<char*> guide, const char* argv[]) {
+void TuringMachine::TM(char q, string tape, vector<char*> guide, const char* argv[]) {
     Carriage carriage;
     cout << "Start tape: " << tape << endl;
     if (argv[2] && strcmp(argv[2], "-log") == 0) {
@@ -34,8 +34,20 @@ void TuringMachine::MT(char q, string tape, vector<char*> guide, const char* arg
     }
 }
 
-void TuringMachine::DeleteGuide(vector<char*> guide_) {
-    for (char* rule : guide_) {
+void TuringMachine::DeleteGuide(vector<char*> guide) {
+    for (char* rule : guide) {
         delete[] rule;
     }
+    guide.clear();
+}
+
+
+int mainTM(int argc, const char* argv[]) {
+    setlocale(LC_ALL, "Russian");
+    Tape exercise;
+    exercise.ReadTask(argv);
+    TuringMachine turing_machine;
+    turing_machine.TM(exercise.GetQ(), exercise.GetTape(), exercise.GetGuide(), argv);
+    turing_machine.DeleteGuide(exercise.GetGuide());
+    return 0;
 }

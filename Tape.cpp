@@ -19,6 +19,9 @@ void Tape::ReadTask(const char* argv[]) {
                 guide_.push_back(rule);
             }
             else {
+                string to_delete{"\r"}; 
+                size_t start {row_.find(to_delete)};  
+                row_.erase(start, to_delete.length()); 
                 tape_ = row_;
             }
         }
