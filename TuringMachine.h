@@ -1,7 +1,9 @@
 #pragma once
-
-#include <string>
+#include <iostream>
+#include <cstring>
 #include <vector>
+#include "Carriage.h"
+#include "Tape.h"
 
 using namespace std;
 
@@ -10,8 +12,6 @@ private:
     Carriage carriage_;
 public:
     void Solver(char& q, string& tape, vector<char*> guide, int carriage);
-    void TM(char q, string tape, vector<char*> guide, const char* argv[]);
-    void DeleteGuide(vector<char*> guide);
+    void MT(char q, string tape, vector<char*> guide, const char* argv[]);
+    void DeleteGuide(vector<char*> guide_);
 };
-
-int mainTM(int argc, const char* argv[]);
