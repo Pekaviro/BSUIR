@@ -1,5 +1,0 @@
-abaabbaaabbb
-q0
-[q0; a; b; r; q0]
-[q0; b; a; r; q0]
-[q0; @; @; h; stop]
