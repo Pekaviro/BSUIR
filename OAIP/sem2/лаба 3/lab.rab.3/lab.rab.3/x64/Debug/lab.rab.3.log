@@ -1,4 +1,0 @@
-﻿  lab.rab.3.cpp
-D:\study\ОАиП\второй сем\лаба 3\lab.rab.3\lab.rab.3.cpp(66,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-D:\study\ОАиП\второй сем\лаба 3\lab.rab.3\lab.rab.3.cpp(80,14): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  lab.rab.3.vcxproj -> D:\study\ОАиП\второй сем\лаба 3\lab.rab.3\x64\Debug\lab.rab.3.exe
