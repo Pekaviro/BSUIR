@@ -8,5 +8,5 @@ public:
     std::string type;
 
     Lighting(const std::string& type);
-    void illuminate();
+    void Illuminate();
 };

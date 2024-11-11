@@ -8,5 +8,5 @@ public:
     std::string description;
 
     Costume(const std::string& description);
-    void wear();
+    void Wear();
 };

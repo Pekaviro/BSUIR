@@ -3,19 +3,16 @@
 #include <string>
 #include <vector>
 #include "Script.h"
-#include "Actor.h"
 
 class Play {
 public:
     std::string title;
-    Script* script;
-    std::vector<Actor*> cast;
+    Script* script = new Script;
 
+    Play(){}
     Play(const std::string& title);
 
     ~Play();
-
-    void AddActor(Actor* actor);
 
     void Perform();
 };

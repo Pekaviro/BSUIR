@@ -5,13 +5,14 @@
 #include "Person.h"
 
 class Actor : public Person {
+private:
+    Play play_;
 public:
-    Actor(const std::string& lastName, const std::string& firstName, int& age, const std::string& gender);
+    Actor(const std::string& lastName, const std::string& firstName, int age, const std::string& gender);
 
     void Perform();
     void ShowDetails();
-    std::string GetLastName() const;
-    std::string GetFirstName() const;
+    void AddActorToPlay(Play* play);
 
     ~Actor() {
         std::cout << lastName_ << " " << firstName_ << " was quit." << std::endl;

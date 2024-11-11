@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Play.h"
 #include "Person.h"
+#include "Actor.h"
 
 class Director : private Person {
 public:
@@ -11,4 +12,5 @@ public:
 
     void Direct(Play* play);
     void Scolding(Actor* actor);
+    int Rate(int outcome);
 };

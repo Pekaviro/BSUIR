@@ -1,6 +1,4 @@
 #include "Person.h"
-#include "Theater.h"
-#include "Ticket.h"
 
 
 static bool isValidDate(const std::string& date) {
@@ -13,7 +11,7 @@ static bool isValidTime(const std::string& time) {
     return std::regex_match(time, time_pattern);
 }
 
-void Person::BookTicket(Theater* theater, Play* play, const std::string date, const std::string time) {
+Ticket Person::BookTicket(Theater* theater, Play* play, const std::string& date, const std::string& time) {
     if (!isValidDate(date)) {
         throw std::invalid_argument("Invalid date format");
     }
@@ -22,7 +20,7 @@ void Person::BookTicket(Theater* theater, Play* play, const std::string date, co
     }
 
             std::string sector;
-            std::cout << "Enter sector name (Stalls, Parquet circle, Dress circle): ";
+            std::cout << "Enter sector name (Stalls, Parquet-circle, Dress-circle): ";
             std::cin >> sector;
             theater->DisplaySeats(sector);
            
@@ -31,10 +29,45 @@ void Person::BookTicket(Theater* theater, Play* play, const std::string date, co
             std::cin >> row >> seat;
             if (theater->BookSeat(sector, row, seat)) {
                 std::cout << "Seat booked successfully.\n";
+                Ticket ticket(sector, row, seat, play, date, time);
+                return ticket;
             }
             else {
                 std::cout << "Seat is already booked or invalid.\n";
             } 
-            Ticket ticket(sector, row, seat, play, date, time);
-            ticket.ShowDetails();
+}
+
+void Person::SignUpForaCasting(Theater* theater, int levelOfActing) {
+    if (theater->actorsNeeded_ == true) {
+        signUp_ = true;
+        levelOfActing_ = levelOfActing;
+        std::cout << lastName_ << " " << firstName_ << " sing up to casting." << std::endl;
+    }
+    else
+        std::cout << "Actors are not needed." << std::endl;
+}
+
+int Person::ParticipatesInTheCasting() {
+    std::srand(std::time(0));
+
+    int base = std::rand() % 10 + 1;
+    int bonus = std::rand() % levelOfActing_;
+
+    return std::min(base + bonus, 10);
+}
+
+std::string Person::GetLastName() const {
+    return lastName_;
+}
+
+std::string Person::GetFirstName() const {
+    return firstName_;
+}
+
+int Person::GetAge() const {
+    return age_;
+}
+
+std::string Person::GetGender() const {
+    return gender_;
 }

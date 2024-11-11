@@ -9,3 +9,12 @@ void Director::Direct(Play* play) {
 void Director::Scolding(Actor* actor) {
     std::cout << "Director is scolding the actor.";
 }
+
+int Director::Rate(int outcome) {
+    std::srand(std::time(0));
+
+    int base = std::rand() % 2 + 1;
+    int bonus = std::rand() % outcome;
+
+    return std::min(base + bonus, 2);
+}

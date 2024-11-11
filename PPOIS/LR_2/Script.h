@@ -7,6 +7,6 @@ class Script {
 public:
     std::string content;
 
-    void write(const std::string& text);
-    void read();
+    void Write(const std::string& text);
+    void Read();
 };

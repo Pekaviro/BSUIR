@@ -5,9 +5,15 @@
 #include "Play.h"
 #include "Person.h"
 
-class Audience: private Person {
+class Audience: public Person {
+private:
+    bool hungry_;
 public:
-    Audience(const std::string& lastName, const std::string& firstName, int& age, const std::string& gender);
+    Ticket* ticket_;
 
-    void watch(Play* play);
+    Audience(const std::string& lastName, const std::string& firstName, int age, const std::string& gender, Ticket* ticket_);
+
+    void GoToTheater();
+    void Watch(Play* play);
+    void GoToCafeteria();
 };

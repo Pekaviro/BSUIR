@@ -2,6 +2,6 @@
 
 Lighting::Lighting(const std::string& type) : type(type) {}
 
-void Lighting::illuminate() {
+void Lighting::Illuminate() {
     std::cout << "Illuminating with: " << type << std::endl;
 }

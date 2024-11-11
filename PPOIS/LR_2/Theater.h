@@ -3,33 +3,27 @@
 #include <string>
 #include <vector>
 #include "Play.h"
+#include "Manager.h"
+#include "Director.h"
+#include "Sector.h"
 
 class Theater {
 private:
-    struct Sector {
-        std::string name;
-        bool** seats;
-        int rows;
-        int cols;
-    };
-
-    Sector* sectors;
-    int sectorCount;
+    Sector* sectors_;
+    int sectorCount_;
 public:
     std::string name_;
-    std::vector<Play*> plays_;
+    bool actorsNeeded_;
 
-    Theater(int count);
+    Theater(const std::string& name, const int sectorCount);
 
     void AddSector(int index, const std::string& name, int rows, int cols);
 
     void DisplaySeats(const std::string& sectorName) const;
 
-    void AddPlay(Play* play);
-
     bool BookSeat(const std::string& sectorName, int row, int seat);
 
-    void ListPlays();
+    void Casting(Manager* manager, Director* director, Person* person);
 
     ~Theater();
 };

@@ -7,9 +7,14 @@
 #include "Person.h"
 
 class Manager : private Person {
+private:
+    Theater* theater_;
 public:
-    Manager(const std::string& lastName, const std::string& firstName, int& age, const std::string& gender);
+    Manager(const std::string& lastName, const std::string& firstName, int& age, const std::string& gender, Theater* theater);
 
-    void Manage(Theater* theater);
+    void Manage();
     void QuitActor(Actor* actor);
+    void AnnounceCasting();
+    void Hire(Person* person, int outcome, int range);
+    void CloseCasting();
 };
