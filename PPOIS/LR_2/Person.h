@@ -7,6 +7,8 @@
 #include "Play.h"
 #include "Ticket.h"
 
+class Theater;
+
 class Person {
 protected:
     std::string lastName_;
@@ -22,7 +24,7 @@ public:
 
     void SignUpForaCasting(Theater* theater, int levelOfActing);
 
-    int ParticipatesInTheCasting();
+    int ParticipatesInTheCasting() const;
 
     std::string GetLastName() const;
     std::string GetFirstName() const;

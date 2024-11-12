@@ -10,5 +10,5 @@ public:
     Actor* actor_;
 
     Role(const std::string& characterName, Actor* actor);
-    void perform();
+    void Perform();
 };

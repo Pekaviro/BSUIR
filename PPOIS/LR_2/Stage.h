@@ -9,5 +9,5 @@ public:
 
     Stage(const std::string& name);
 
-    void setup();
+    void Setup();
 };
