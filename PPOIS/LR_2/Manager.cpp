@@ -1,8 +1,8 @@
 #include "Manager.h"
 
-Manager::Manager(const std::string& lastName, const std::string& firstName, int& age, const std::string& gender, Theater* theater) : Person(lastName, firstName, age, gender), theater_(theater) {}
+Manager::Manager(const std::string& lastName, const std::string& firstName, int age, const std::string& gender, Theater* theater) : lastName_(lastName), firstName_(firstName), age_(age), gender_(gender), theater_(theater) {}
 
-void Manager::Manage() {
+void Manager::Manage() const {
     std::cout << lastName_ << " " << firstName_ << " is managing the theater: " << theater_->name_ << std::endl;
 }
 

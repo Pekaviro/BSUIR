@@ -47,7 +47,7 @@ void Person::SignUpForaCasting(Theater* theater, int levelOfActing) {
         std::cout << "Actors are not needed." << std::endl;
 }
 
-int Person::ParticipatesInTheCasting() {
+int Person::ParticipatesInTheCasting() const {
     std::srand(std::time(0));
 
     int base = std::rand() % 10 + 1;
