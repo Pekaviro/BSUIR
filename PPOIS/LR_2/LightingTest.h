@@ -5,7 +5,7 @@
 
 TEST(LightingTest, ConstructorTest) {
     Lighting lighting("Spotlight");
-    EXPECT_EQ(lighting.GetType(), "Spotlight");
+    EXPECT_EQ(lighting.type_, "Spotlight");
 }
 
 TEST(LightingTest, IlluminateTest) {

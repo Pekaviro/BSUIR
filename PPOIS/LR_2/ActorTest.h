@@ -31,7 +31,7 @@ TEST(ActorTest, ShowDetailsTest) {
 TEST(ActorTest, AddActorToPlayTest) {
     Actor actor("Doe", "John", 30, "Male");
     Play play;
-    play.title = "Hamlet";
+    play.title_ = "Hamlet";
     testing::internal::CaptureStdout();
     actor.AddActorToPlay(&play);
     std::string output = testing::internal::GetCapturedStdout();

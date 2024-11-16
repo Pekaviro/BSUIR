@@ -7,8 +7,8 @@
 #include "Person.h"
 
 TEST(ManagerTest, ConstructorTest) {
-    Theater theater;
-    theater.name_ = "Grand Theater";
+    Theater theater("Grand Theater", 1);
+    theater.AddSector(0, "Stalls", 10, 10);
     Manager manager("Smith", "John", 50, "Male", &theater);
     EXPECT_EQ(manager.GetLastName(), "Smith");
     EXPECT_EQ(manager.GetFirstName(), "John");
@@ -18,8 +18,8 @@ TEST(ManagerTest, ConstructorTest) {
 }
 
 TEST(ManagerTest, ManageTest) {
-    Theater theater;
-    theater.name_ = "Grand Theater";
+    Theater theater("Grand Theater", 1);
+    theater.AddSector(0, "Stalls", 10, 10);
     Manager manager("Smith", "John", 50, "Male", &theater);
     testing::internal::CaptureStdout();
     manager.Manage();
@@ -28,14 +28,16 @@ TEST(ManagerTest, ManageTest) {
 }
 
 TEST(ManagerTest, QuitActorTest) {
-    Theater theater;
+    Theater theater("Grand Theater", 1);
+    theater.AddSector(0, "Stalls", 10, 10);
     Manager manager("Smith", "John", 50, "Male", &theater);
     Actor* actor = new Actor("Doe", "Jane", 30, "Female");
     manager.QuitActor(actor);
 }
 
 TEST(ManagerTest, AnnounceCastingTest) {
-    Theater theater;
+    Theater theater("Grand Theater", 1);
+    theater.AddSector(0, "Stalls", 10, 10);
     Manager manager("Smith", "John", 50, "Male", &theater);
     testing::internal::CaptureStdout();
     manager.AnnounceCasting();
@@ -45,7 +47,8 @@ TEST(ManagerTest, AnnounceCastingTest) {
 }
 
 TEST(ManagerTest, HireTest) {
-    Theater theater;
+    Theater theater("Grand Theater", 1);
+    theater.AddSector(0, "Stalls", 10, 10);
     Manager manager("Smith", "John", 50, "Male", &theater);
     Person person("Doe", "Jane", 30, "Female");
     testing::internal::CaptureStdout();
@@ -55,7 +58,8 @@ TEST(ManagerTest, HireTest) {
 }
 
 TEST(ManagerTest, CloseCastingTest) {
-    Theater theater;
+    Theater theater("Grand Theater", 1);
+    theater.AddSector(0, "Stalls", 10, 10);
     Manager manager("Smith", "John", 50, "Male", &theater);
     manager.AnnounceCasting();
     manager.CloseCasting();

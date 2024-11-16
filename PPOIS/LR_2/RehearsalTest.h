@@ -7,7 +7,7 @@
 TEST(RehearsalTest, ConstructorTest) {
     Play play("Hamlet");
     Rehearsal rehearsal(&play);
-    EXPECT_EQ(rehearsal.GetPlay(), &play);
+    EXPECT_EQ(rehearsal.play_, &play);
 }
 
 TEST(RehearsalTest, RehearseTest) {
