@@ -7,8 +7,8 @@
 TEST(RoleTest, ConstructorTest) {
     Actor actor("Doe", "John", 30, "Male");
     Role role("Hamlet", &actor);
-    EXPECT_EQ(role.GetCharacterName(), "Hamlet");
-    EXPECT_EQ(role.GetActor(), &actor);
+    EXPECT_EQ(role.characterName_, "Hamlet");
+    EXPECT_EQ(role.actor_, &actor);
 }
 
 TEST(RoleTest, PerformTest) {

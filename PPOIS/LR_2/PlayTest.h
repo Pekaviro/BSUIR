@@ -6,8 +6,8 @@
 
 TEST(PlayTest, ConstructorTest) {
     Play play("Hamlet");
-    EXPECT_EQ(play.GetTitle(), "Hamlet");
-    EXPECT_NE(play.GetScript(), nullptr);
+    EXPECT_EQ(play.title_, "Hamlet");
+    EXPECT_NE(play.script_, nullptr);
 }
 
 TEST(PlayTest, PerformTest) {
@@ -22,6 +22,6 @@ TEST(PlayTest, DestructorTest) {
     Script* script = nullptr;
     {
         Play play("Hamlet");
-        script = play.GetScript();
+        script = play.script_;
     }
 }

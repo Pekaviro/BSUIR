@@ -5,7 +5,7 @@
 
 TEST(CostumeTest, ConstructorTest) {
     Costume costume("Pirate Costume");
-    EXPECT_EQ(costume.GetDescription(), "Pirate Costume");
+    EXPECT_EQ(costume.description, "Pirate Costume");
 }
 
 TEST(CostumeTest, WearTest) {

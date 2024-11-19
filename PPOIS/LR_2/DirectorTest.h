@@ -16,7 +16,7 @@ TEST(DirectorTest, ConstructorTest) {
 TEST(DirectorTest, DirectTest) {
     Director director("Nolan", "Christopher", 45, "Male");
     Play play;
-    play.title = "Inception";
+    play.title_ = "Inception";
     testing::internal::CaptureStdout();
     director.Direct(&play);
     std::string output = testing::internal::GetCapturedStdout();

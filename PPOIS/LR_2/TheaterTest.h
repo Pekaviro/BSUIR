@@ -9,9 +9,12 @@
 
 TEST(TheaterTest, ConstructorTest) {
     Theater theater("Grand Theater", 3);
-    EXPECT_EQ(theater.GetName(), "Grand Theater");
+    theater.AddSector(0, "Stalls", 10, 10);
+    theater.AddSector(1, "Parquet-circle", 8, 8);
+    theater.AddSector(2, "Dress-circle", 6, 6);
+    EXPECT_EQ(theater.name_, "Grand Theater");
     EXPECT_EQ(theater.GetSectorCount(), 3);
-    EXPECT_FALSE(theater.AreActorsNeeded());
+    EXPECT_FALSE(theater.actorsNeeded_);
 }
 
 TEST(TheaterTest, AddSectorTest) {
@@ -50,7 +53,8 @@ TEST(TheaterTest, BookSeatTest) {
 
 TEST(TheaterTest, CastingTest) {
     Theater theater("Grand Theater", 1);
-    theater.SetActorsNeeded(true);
+    theater.AddSector(0, "Stalls", 10, 10);
+    theater.actorsNeeded_ = true;
     Manager manager("Smith", "John", 50, "Male", &theater);
     Director director("Nolan", "Christopher", 45, "Male");
     Person person("Doe", "Jane", 30, "Female");

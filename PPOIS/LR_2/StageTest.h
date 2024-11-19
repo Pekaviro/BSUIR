@@ -5,7 +5,7 @@
 
 TEST(StageTest, ConstructorTest) {
     Stage stage("Main Stage");
-    EXPECT_EQ(stage.GetName(), "Main Stage");
+    EXPECT_EQ(stage.name_, "Main Stage");
 }
 
 TEST(StageTest, SetupTest) {
