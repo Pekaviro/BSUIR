@@ -4,20 +4,20 @@ void CloudCover::display() {
     std::cout << "Cloud cover: " << coverage_ << "%" << std::endl;
 }
 
-std::string CloudCover::cloudinessToText(int cloudiness) {
-    if (cloudiness == 0) {
+std::string CloudCover::cloudinessToText() {
+    if (coverage_ == 0) {
         return "Clearly";
     }
-    else if (cloudiness > 0 && cloudiness <= 20) {
+    else if (coverage_ > 0 && coverage_ <= 20) {
         return "Cloudy";
     }
-    else if (cloudiness > 20 && cloudiness <= 50) {
+    else if (coverage_ > 20 && coverage_ <= 50) {
         return "Partly cloudy";
     }
-    else if (cloudiness > 50 && cloudiness <= 80) {
+    else if (coverage_ > 50 && coverage_ <= 80) {
         return "Cloudy with clarifications";
     }
-    else if (cloudiness > 80 && cloudiness <= 100) {
+    else if (coverage_ > 80 && coverage_ <= 100) {
         return "Dull";
     }
     else {
@@ -25,6 +25,10 @@ std::string CloudCover::cloudinessToText(int cloudiness) {
     }
 }
 
-double CloudCover::getCoverage() const {
+int CloudCover::setCoverage(int coverage) {
+    this->coverage_ = coverage;
+}
+
+int CloudCover::getCoverage() const {
     return coverage_;
 }

@@ -7,9 +7,13 @@ class CloudCover {
 private:
     int coverage_;
 public:
+    CloudCover(){}
+    CloudCover(int coverage) :coverage_(coverage){}
+
     void display();
 
-    std::string cloudinessToText(int cloudiness);
+    std::string cloudinessToText();
 
-    double getCoverage() const;
+    int setCoverage(int coverage);
+    int getCoverage() const;
 };
